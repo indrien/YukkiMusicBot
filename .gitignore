@@ -1,10 +1,77 @@
+# Environment and Configuration
 .env
 .cache
+*.env
+config.ini
+
+# Logs
 Yukkilogs.txt
+logs/
+*.log
+
+# System Files
 .DS_Store
+Thumbs.db
+
+# Session Files
 *.session
+*.session-journal
+
+# Temporary Files
 raw_files/
 cache/
 downloads/
+temp/
+
+# Python
 __pycache__/
-*.session-journal
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+yukkibot/
+venv/
+env/
+ENV/
+cookies.txt
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Database
+*.db
+*.sqlite3
+
+# Media Files
+*.mp3
+*.mp4
+*.wav
+*.flac
+*.m4a
+*.webm
+
+# OS Generated
+.directory
+*.tmp

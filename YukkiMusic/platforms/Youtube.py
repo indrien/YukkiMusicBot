@@ -210,7 +210,10 @@ class YouTubeAPI:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        ytdl_opts = {"quiet": True}
+        ytdl_opts = {
+            "quiet": True,
+            "cookiefile": config.YOUTUBE_COOKIES_PATH,
+        }
         ydl = yt_dlp.YoutubeDL(ytdl_opts)
         with ydl:
             formats_available = []
@@ -284,6 +287,7 @@ class YouTubeAPI:
                 "nocheckcertificate": True,
                 "quiet": True,
                 "no_warnings": True,
+                "cookiefile": config.YOUTUBE_COOKIES_PATH,
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
             info = x.extract_info(link, False)
@@ -303,6 +307,7 @@ class YouTubeAPI:
                 "nocheckcertificate": True,
                 "quiet": True,
                 "no_warnings": True,
+                "cookiefile": config.YOUTUBE_COOKIES_PATH,
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
             info = x.extract_info(link, False)
@@ -326,6 +331,7 @@ class YouTubeAPI:
                 "no_warnings": True,
                 "prefer_ffmpeg": True,
                 "merge_output_format": "mp4",
+                "cookiefile": config.YOUTUBE_COOKIES_PATH,
             }
             x = yt_dlp.YoutubeDL(ydl_optssx)
             x.download([link])
@@ -340,6 +346,7 @@ class YouTubeAPI:
                 "quiet": True,
                 "no_warnings": True,
                 "prefer_ffmpeg": True,
+                "cookiefile": config.YOUTUBE_COOKIES_PATH,
                 "postprocessors": [
                     {
                         "key": "FFmpegExtractAudio",
